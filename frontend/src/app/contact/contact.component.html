@@ -1,0 +1,51 @@
+<div class="contact-page">
+    <div class="container page">
+      <div class="row">
+  
+        <div class="col-md-6 offset-md-3 col-xs-12">
+          <h1 class="text-xs-center">{{ title }}</h1>
+          <app-list-errors [errors]="errors"></app-list-errors>
+          <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+            <fieldset [disabled]="isSubmitting">
+              <fieldset class="form-group">
+                <input
+                  formControlName="name"
+                  placeholder="Name"
+                  class="form-control form-control-lg"
+                  type="text"
+                   />
+              </fieldset>
+              <fieldset class="form-group">
+                <input
+                  formControlName="email"
+                  placeholder="Email"
+                  class="form-control form-control-lg"
+                  type="text" />
+              </fieldset>
+              <fieldset class="form-group">
+                  <select
+                  formControlName="subject"
+                  class="form-control">
+                      <option value="volvo">Volvo</option>
+                      <option value="saab">Saab</option>
+                      <option value="mercedes">Mercedes</option>
+                      <option value="audi">Audi</option>
+                    </select>
+              </fieldset>
+              <fieldset class="form-group">
+                <input
+                  formControlName="commentary"
+                  placeholder="Commentary"
+                  class="form-control form-control-lg"
+                  type="textarea" />
+              </fieldset>
+              <button class="btn btn-lg btn-primary pull-xs-right" [disabled]="!contactForm.valid" type="submit">
+                Submit
+              </button>
+            </fieldset>
+          </form>
+        </div>
+  
+      </div>
+    </div>
+  </div>
