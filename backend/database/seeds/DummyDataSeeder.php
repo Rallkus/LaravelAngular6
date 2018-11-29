@@ -5,6 +5,12 @@ use Illuminate\Database\Seeder;
 class DummyDataSeeder extends Seeder
 {
     /**
+     * Total number of buffs.
+     *
+     * @var int
+     */
+    protected $totalBuffs = 25;
+    /**
      * Total number of users.
      *
      * @var int
@@ -68,7 +74,8 @@ class DummyDataSeeder extends Seeder
      * @param \Faker\Generator $faker
      */
     public function run(\Faker\Generator $faker)
-    {
+    {   
+        $buffs = factory(\App\Buffs::class)->times($this->totalBuffs)->create();
         $users = factory(\App\User::class)->times($this->totalUsers)->create();
 
         $tags = factory(\App\Tag::class)->times($this->totalTags)->create();

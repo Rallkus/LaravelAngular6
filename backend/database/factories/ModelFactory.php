@@ -21,6 +21,16 @@ $factory->define(App\User::class, function (\Faker\Generator $faker) {
         'image' => 'https://cdn.worldvectorlogo.com/logos/laravel.svg',
     ];
 });
+$factory->define(App\Buffs::class, function (\Faker\Generator $faker) {
+
+    return [
+        'name' => str_replace('.', '', $faker->unique()->name),
+        'description' => $faker->sentence,
+        'initialValueReputation' => random_int(0,10),
+        'initialValueGold' => random_int(15,20000),
+        'valueType' => $faker->randomElement(["Agilidad","Fuerza","Destreza","Inteligencia"]),
+    ];
+});
 
 $factory->define(App\Article::class, function (\Faker\Generator $faker) {
 

@@ -5,10 +5,10 @@ import { Errors } from '../core';
 
 @Component({
   selector: 'app-auth-page',
-  templateUrl: './technologies.component.html'
+  templateUrl: './buffs.component.html'
 })
-export class TechnologiesComponent{
-  title: String = 'Technologies';
+export class BuffsComponent{
+  title: String = 'Buffs';
   errors: Errors = {errors: {}};
   isSubmitting = false;
 

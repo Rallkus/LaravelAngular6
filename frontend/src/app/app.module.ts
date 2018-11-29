@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
-import { TechnologiesModule } from './technologies/technologies.module';
+import { BuffsModule } from './buffs/buffs.module';
 import { ContactModule } from './contact/contact.module';
 import {
   FooterComponent,
@@ -21,7 +21,7 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     SharedModule,
     HomeModule,
-    TechnologiesModule,
+    BuffsModule,
     ContactModule,
     AuthModule,
     AppRoutingModule

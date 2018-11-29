@@ -1,17 +1,17 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { TechnologiesComponent } from './technologies.component';
+import { BuffsComponent } from './buffs.component';
 import { SharedModule } from '../shared';
-import { TechnologiesRoutingModule } from './technologies-routing.module';
+import { BuffsRoutingModule } from './buffs-routing.module';
 
 @NgModule({
     imports: [
         SharedModule,
-        TechnologiesRoutingModule
+        BuffsRoutingModule
       ],
       declarations: [
-        TechnologiesComponent
+        BuffsComponent
       ]
 })
-export class TechnologiesModule {}
+export class BuffsModule {}

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTechnologiesTable extends Migration
+class Buffs extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateTechnologiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('technologies', function (Blueprint $table) {
+        Schema::create('buffs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('description');
-            $table->integer('initialValue');
+            $table->integer('initialValueReputation');
+            $table->integer('initialValueGold');
             $table->string('valueType');
 
             $table->unique(['id', 'name']);
@@ -31,6 +32,6 @@ class CreateTechnologiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('technologies');
+        //
     }
 }

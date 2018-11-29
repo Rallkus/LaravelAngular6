@@ -23,8 +23,8 @@ const routes: Routes = [
     loadChildren: './contact/contact.module#ContactModule'
   },
   {
-    path: 'technologies',
-    loadChildren: './technologies/technologies.module#TechnologiesModule'
+    path: 'buffs',
+    loadChildren: './buffs/buffs.module#BuffsModule'
   }
 ];
 
