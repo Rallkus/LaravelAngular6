@@ -15,6 +15,7 @@ import {
   ProfilesService,
   TagsService,
   UserService,
+  BuffsService,
   ContactService
 } from './services';
 
@@ -33,6 +34,7 @@ import {
     JwtService,
     ProfilesService,
     TagsService,
+    BuffsService,
     ContactService,
     UserService
   ],

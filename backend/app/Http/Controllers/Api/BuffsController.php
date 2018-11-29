@@ -15,7 +15,7 @@ class BuffsController extends ApiController
 
     public function index()
     {
-        $buffs = Buffs::all();
+        $buffs = Buffs::all()->pluck('id', 'name', 'initialValueReputation', 'initialValueGold');
         return $this->respondWithTransformer($buffs);
     }
 }

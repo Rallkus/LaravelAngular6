@@ -8,6 +8,11 @@ class BuffsTransformer extends Transformer
 
     public function transform($data)
     {
-        return $data;
+        return [
+            'id' => $data['id'],
+            'name' => $data['name'],
+            'initialValueReputation' => $data['initialValueReputation'],
+            'initialValueGold' => $data['initialValueGold'],
+        ];
     }
 }
