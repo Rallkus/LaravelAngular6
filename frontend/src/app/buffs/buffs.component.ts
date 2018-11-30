@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Errors, BuffsService} from '../core';
+import { Errors, BuffsService, Buffs} from '../core';
 
 @Component({
   selector: 'app-auth-page',
   templateUrl: './buffs.component.html'
 })
 export class BuffsComponent implements OnInit{
+  buffs: Buffs;
   title: String = 'Buffs';
   errors: Errors = {errors: {}};
   isSubmitting = false;
@@ -20,7 +21,8 @@ export class BuffsComponent implements OnInit{
   ngOnInit() {
     this.buffsService.getAll()
     .subscribe(buffs => {
-      console.log(buffs);
+      this.buffs=buffs;
+      console.log(this.buffs);
     });
     
   }

@@ -10,9 +10,12 @@ class BuffsTransformer extends Transformer
     {
         return [
             'id' => $data['id'],
+            'image' => $data['image'],
             'name' => $data['name'],
+            'description' => $data['description'],
             'initialValueReputation' => $data['initialValueReputation'],
             'initialValueGold' => $data['initialValueGold'],
+            'valueType' => $data['valueType'],
         ];
     }
 }

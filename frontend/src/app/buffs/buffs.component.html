@@ -1,7 +1,11 @@
-<h2>My buffs</h2>
-<ul class="heroes">
-  <li>
-    <span class="badge">id</span> name
-    <span class="badge">id</span> name
-  </li>
-</ul>
+<div style="display:flex; flex-wrap:wrap;
+flex-direction:row">
+  <div *ngFor="let buff of buffs" class="card mx-auto" style="width: 18rem;">
+    <img class="card-img-top" src="{{buff.image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{buff.name}}</h5>
+      <p class="card-text">{{buff.description}}</p>
+      <a href="#" class="btn btn-primary">{{buff.initialValueReputation!=0?buff.initialValueReputation + ' reputation':''}} {{buff.initialValueGold!=0?buff.initialValueGold + ' gold':''}} </a>
+    </div>
+  </div>
+</div>

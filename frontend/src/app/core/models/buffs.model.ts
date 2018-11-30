@@ -1,4 +1,5 @@
 export interface Buffs {
+    image: string;
     id: number;
     name: string;
     description: string;
