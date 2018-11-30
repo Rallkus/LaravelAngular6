@@ -24,6 +24,7 @@ $factory->define(App\User::class, function (\Faker\Generator $faker) {
 $factory->define(App\Buffs::class, function (\Faker\Generator $faker) {
 
     return [
+        'image' => 'http://localhost:8000/storage/strength.jpeg',
         'name' => str_replace('.', '', $faker->unique()->name),
         'description' => $faker->sentence,
         'initialValueReputation' => random_int(0,10),

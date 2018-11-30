@@ -15,6 +15,7 @@ class Buffs extends Migration
     {
         Schema::create('buffs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('image');
             $table->string('name');
             $table->string('description');
             $table->integer('initialValueReputation');

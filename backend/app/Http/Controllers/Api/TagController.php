@@ -24,7 +24,7 @@ class TagController extends ApiController
      */
     public function index()
     {
-        $tags = Tag::all()->pluck('id', 'name', 'initialValueReputation', 'initialValueGold');
+        $tags = Tag::all()->pluck('name');
 
         return $this->respondWithTransformer($tags);
     }
