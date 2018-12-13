@@ -5,11 +5,29 @@ use Illuminate\Database\Seeder;
 class DummyDataSeeder extends Seeder
 {
     /**
+     * Total number of players.
+     *
+     * @var int
+     */
+    protected $totalPlayers = 25;
+    /**
+     * Total number of heroes.
+     *
+     * @var int
+     */
+    protected $totalHeroes = 25;
+    /**
      * Total number of buffs.
      *
      * @var int
      */
     protected $totalBuffs = 25;
+    /**
+     * Total number of guilds.
+     *
+     * @var int
+     */
+    protected $totalGuilds = 20;
     /**
      * Total number of users.
      *
@@ -30,7 +48,13 @@ class DummyDataSeeder extends Seeder
      * @var float Value should be between 0 - 1.0
      */
     protected $userWithArticleRatio = 0.8;
-
+    /**
+     * Percentage of players with heroes.
+     *
+     * @var float Value should be between 0 - 1.0
+     */
+    protected $PlayersWithHeroes = 1.0;
+    
     /**
      * Maximum articles that can be created by a user.
      *
@@ -60,6 +84,13 @@ class DummyDataSeeder extends Seeder
     protected $usersWithFavoritesRatio = 0.75;
 
     /**
+     * Percentage of heroes with guild.
+     *
+     * @var float Value should be between 0 - 1.0
+     */
+    protected $heroesWithGuild = 0.80;
+
+    /**
      * Percentage of users with following.
      *
      * @var float Value should be between 0 - 1.0
@@ -75,7 +106,21 @@ class DummyDataSeeder extends Seeder
      */
     public function run(\Faker\Generator $faker)
     {   
+        $levels = factory(\App\Levels::class)->times(1)->create();
         $buffs = factory(\App\Buffs::class)->times($this->totalBuffs)->create();
+        $guilds = factory(\App\Guilds::class)->times(20)->create();
+        $guilds->each(function ($guild) {
+            $guild
+                ->players()
+                ->saveMany(
+                    factory(App\Players::class, rand(20,30))->make()
+                );
+        });
+        
+        /*factory(App\Guilds::class, 20)->create()->each(function ($u) {
+            $u->heroes()->save(factory(App\Heroes::class)->make());
+        });*/
+
         $users = factory(\App\User::class)->times($this->totalUsers)->create();
 
         $tags = factory(\App\Tag::class)->times($this->totalTags)->create();

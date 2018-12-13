@@ -21,6 +21,12 @@ $factory->define(App\User::class, function (\Faker\Generator $faker) {
         'image' => 'https://cdn.worldvectorlogo.com/logos/laravel.svg',
     ];
 });
+$factory->define(App\Levels::class, function (\Faker\Generator $faker) {
+
+    return [
+        'required_experience' => 0,
+    ];
+});
 $factory->define(App\Buffs::class, function (\Faker\Generator $faker) {
 
     return [
@@ -29,7 +35,7 @@ $factory->define(App\Buffs::class, function (\Faker\Generator $faker) {
         'description' => $faker->sentence,
         'initialValueReputation' => random_int(0,10),
         'initialValueGold' => random_int(15,20000),
-        'valueType' => $faker->randomElement(["Agilidad","Fuerza","Destreza","Inteligencia"]),
+        'valueType' => $faker->randomElement(["Agilidad","Fuerza","Inteligencia"]),
     ];
 });
 
@@ -65,3 +71,44 @@ $factory->define(App\Tag::class, function (\Faker\Generator $faker) {
         'name' => $faker->unique()->word,
     ];
 });
+
+
+$factory->define(App\Players::class, function (\Faker\Generator $faker) {
+
+    return [
+        'username' => str_replace('.', '', $faker->unique()->userName),
+        'email' => $faker->unique()->safeEmail,
+        'password' => 'secret',
+        'image' => 'https://cdn.worldvectorlogo.com/logos/laravel.svg',
+        'guilds_id' => function () {
+            return factory(App\Guilds::class)->create()->id;
+        },
+        'gold' => random_int(150,200),
+        'reputation' => random_int(5,10),
+        'experience' => 0,
+    ];
+});
+$factory->define(App\Heroes::class, function (\Faker\Generator $faker) {
+    static $number = 1;
+    return [
+        'heroname' => str_replace('.', '', $faker->unique()->userName),
+        'image' => 'https://cdn.worldvectorlogo.com/logos/laravel.svg',
+        'gold' => random_int(150,200),
+        'reputation' => random_int(5,10),
+        'experience' => 0,
+        'players_id' =>$number,
+        'guilds_id' => random_int(1,20),
+        'levels_id' => 1,
+        'ranking' => $number++,
+    ];
+});
+$factory->define(App\Guilds::class, function (\Faker\Generator $faker) {
+    $name = str_replace('.', '', $faker->unique()->name);
+    return [
+        'name' => $name,
+        'slug' => $name,
+        'image' => 'https://cdn.worldvectorlogo.com/logos/laravel.svg',
+        'max_members' => 50,
+    ];
+});
+

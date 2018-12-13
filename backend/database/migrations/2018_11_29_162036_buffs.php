@@ -11,6 +11,11 @@ class Buffs extends Migration
      *
      * @return void
      */
+    /**
+     * TODO
+     * I have to eliminate initialValueReputation, initialValueGold and valueType
+     * Until I have a buff defined this is the way it stays
+     */
     public function up()
     {
         Schema::create('buffs', function (Blueprint $table) {
@@ -33,6 +38,6 @@ class Buffs extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('buffs');
     }
 }
