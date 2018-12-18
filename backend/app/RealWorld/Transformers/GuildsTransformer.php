@@ -1,7 +1,7 @@
 <?php
 
 namespace App\RealWorld\Transformers;
-
+use App\RealWorld\Transformers\PlayersTransformer;
 class GuildsTransformer extends Transformer
 {
     protected $resourceName = 'guilds';
@@ -16,6 +16,7 @@ class GuildsTransformer extends Transformer
             'max_members' => $data['max_members'],
             'created_at' => $data['created_at'],
             'updated_at' => $data['updated_at'],
+            'players' => $data['players'],
         ];
     }
 }

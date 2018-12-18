@@ -103,10 +103,8 @@ $factory->define(App\Heroes::class, function (\Faker\Generator $faker) {
     ];
 });
 $factory->define(App\Guilds::class, function (\Faker\Generator $faker) {
-    $name = str_replace('.', '', $faker->unique()->name);
     return [
-        'name' => $name,
-        'slug' => $name,
+        'name' => $faker->unique()->userName,
         'image' => 'https://cdn.worldvectorlogo.com/logos/laravel.svg',
         'max_members' => 50,
     ];

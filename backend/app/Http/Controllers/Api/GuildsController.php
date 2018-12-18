@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 use App\RealWorld\Transformers\GuildsTransformer;
+use App\RealWorld\Paginate\Paginate;
 
 use App\Guilds;
+use App\Players;
 use Illuminate\Http\Request;
 
 class GuildsController extends ApiController
@@ -19,8 +21,23 @@ class GuildsController extends ApiController
      */
     public function index()
     {
-        $guilds = Guilds::all();
+        $guilds = Guilds::with('players')->get();
         return $this->respondWithTransformer($guilds);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function players($guild)
+    {
+        
+        $b = Guilds::where('slug', $guild)->first();
+        //print_r($b);
+        $a= Guilds::with('players')->get();
+        //$players=$guild->select('name')->get();
+        //print_r($guild);
+        return $this->respondWithTransformer($b);
     }
 
     /**

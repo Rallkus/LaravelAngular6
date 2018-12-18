@@ -6,3 +6,6 @@ export * from './profile.model';
 export * from './user.model';
 export * from './buffs.model';
 export * from './contact.model';
+export * from './players.model';
+export * from './guilds.model';
+

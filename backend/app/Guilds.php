@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\RealWorld\Slug\HasSlug;
 
 class Guilds extends Model
 {
+    use HasSlug;
     /**
      * Get the guild of a hero.
      *
@@ -14,5 +16,9 @@ class Guilds extends Model
     public function players()
     {
         return $this->hasMany(Players::class);
+    }
+    public function getSlugSourceColumn()
+    {
+        return 'name';
     }
 }

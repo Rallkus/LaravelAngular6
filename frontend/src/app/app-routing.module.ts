@@ -25,6 +25,14 @@ const routes: Routes = [
   {
     path: 'buffs',
     loadChildren: './buffs/buffs.module#BuffsModule'
+  },
+  {
+    path: 'guilds',
+    loadChildren: './guilds/guilds.module#GuildsModule'
+  },
+  {
+    path: 'players',
+    loadChildren: './players/players.module#PlayersModule'
   }
 ];
 

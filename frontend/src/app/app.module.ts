@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
 import { BuffsModule } from './buffs/buffs.module';
+import { GuildsModule } from './guilds/guilds.module';
 import { ContactModule } from './contact/contact.module';
 import {
   FooterComponent,
@@ -13,6 +14,7 @@ import {
 } from './shared';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
+import { PlayersModule } from './players/players.module';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, HeaderComponent],
@@ -22,8 +24,10 @@ import { CoreModule } from './core/core.module';
     SharedModule,
     HomeModule,
     BuffsModule,
+    GuildsModule,
     ContactModule,
     AuthModule,
+    PlayersModule,
     AppRoutingModule
   ],
   providers: [],

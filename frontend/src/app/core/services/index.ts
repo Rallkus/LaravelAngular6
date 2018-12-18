@@ -8,3 +8,5 @@ export * from './tags.service';
 export * from './user.service';
 export * from './buffs.service';
 export * from './contact.service';
+export * from './guilds.service';
+export * from './players.service';

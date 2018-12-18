@@ -48,7 +48,7 @@ class Players extends Model
     }
     public function guild()
     {
-        return $this->belongsTo(Guild::class);
+        return $this->belongsTo(Guilds::class);
     }
 
     /**
