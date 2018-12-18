@@ -17,6 +17,7 @@ class Players extends Migration
             $table->increments('id');
             $table->string('image');
             $table->string('username');
+            $table->string('slug');
             $table->string('password');
             $table->string('email');
             $table->unsignedInteger('guilds_id');

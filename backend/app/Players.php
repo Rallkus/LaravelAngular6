@@ -5,9 +5,11 @@ namespace App;
 use JWTAuth;
 
 use Illuminate\Database\Eloquent\Model;
+use App\RealWorld\Slug\HasSlug;
 
 class Players extends Model
 {
+    use HasSlug;
 
     /**
      * The attributes that are mass assignable.
@@ -57,6 +59,10 @@ class Players extends Model
      * @return string
      */
     public function getRouteKeyName()
+    {
+        return 'username';
+    }
+    public function getSlugSourceColumn()
     {
         return 'username';
     }

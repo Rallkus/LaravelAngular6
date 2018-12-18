@@ -76,7 +76,7 @@ $factory->define(App\Tag::class, function (\Faker\Generator $faker) {
 $factory->define(App\Players::class, function (\Faker\Generator $faker) {
 
     return [
-        'username' => str_replace('.', '', $faker->unique()->userName),
+        'username' => $faker->unique()->userName,
         'email' => $faker->unique()->safeEmail,
         'password' => 'secret',
         'image' => 'https://cdn.worldvectorlogo.com/logos/laravel.svg',

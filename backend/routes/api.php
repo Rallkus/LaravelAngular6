@@ -19,6 +19,8 @@ Route::group(['namespace' => 'Api'], function () {
     Route::get('guilds', 'GuildsController@index');
     Route::get('guilds/{slug}', 'GuildsController@players');
 
+    Route::get('player/{slug}', 'PlayerController@getPlayerDetails');
+
     Route::post('users/login', 'AuthController@login');
     Route::post('users', 'AuthController@register');
 
