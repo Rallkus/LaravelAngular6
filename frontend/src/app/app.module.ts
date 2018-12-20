@@ -15,6 +15,7 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { PlayersModule } from './players/players.module';
+import { PlayerDetailsModule } from './playerDetails/playerDetails.module';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, HeaderComponent],
@@ -28,6 +29,7 @@ import { PlayersModule } from './players/players.module';
     ContactModule,
     AuthModule,
     PlayersModule,
+    PlayerDetailsModule,
     AppRoutingModule
   ],
   providers: [],

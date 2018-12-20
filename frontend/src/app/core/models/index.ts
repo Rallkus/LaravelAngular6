@@ -8,4 +8,5 @@ export * from './buffs.model';
 export * from './contact.model';
 export * from './players.model';
 export * from './guilds.model';
+export * from './playerDetails.model';
 

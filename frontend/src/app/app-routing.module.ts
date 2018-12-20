@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'players',
     loadChildren: './players/players.module#PlayersModule'
+  },
+  {
+    path: 'player',
+    loadChildren: './playerDetails/playerDetails.module#PlayerDetailsModule'
   }
 ];
 

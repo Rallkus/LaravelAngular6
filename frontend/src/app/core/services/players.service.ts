@@ -16,6 +16,10 @@ export class PlayersService {
     return this.apiService.get('/guilds/' + slug)
       .pipe(map(data => data.guilds));
   }
+  getPlayerDetails(slug): Observable<Guilds> {
+    return this.apiService.get('/player/' + slug)
+      .pipe(map(data => data.player));
+  }
 
 
 }
