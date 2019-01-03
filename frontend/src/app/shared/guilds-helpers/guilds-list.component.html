@@ -1,0 +1,36 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Position</th>
+        <th scope="col">Image</th>
+        <th scope="col">Name</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let guild of results">
+        <th scope="row">{{guild.id}}</th>
+        <td><img src="{{guild.image}}" style="width:'50px'; height: 50px;"></td>
+        <td>{{guild.name}}</td>
+        <td><a class="btn btn-sm btn-outline-secondary"
+          [routerLink]="['/players', guild.slug]">
+         <i class="ion-edit"></i> Details
+       </a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <nav [hidden]="loading || totalPages.length <= 1">
+    <ul class="pagination">
+  
+      <li class="page-item"
+        [ngClass]="{'active': pageNumber === currentPage}"
+        *ngFor="let pageNumber of totalPages"
+        (click)="setPageTo(pageNumber)">
+  
+        <a class="page-link" >{{ pageNumber }}</a>
+  
+      </li>
+  
+    </ul>
+  </nav>

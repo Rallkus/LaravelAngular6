@@ -13,8 +13,9 @@ class Stats extends Migration
      */
     public function up()
     {
-        //
+        
     }
+
 
     /**
      * Reverse the migrations.
@@ -23,6 +24,6 @@ class Stats extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stats');
+
     }
 }

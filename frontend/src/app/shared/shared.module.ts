@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { ArticleListComponent, ArticleMetaComponent, ArticlePreviewComponent } from './article-helpers';
+import { GuildsListComponent } from './guilds-helpers';
 import { FavoriteButtonComponent, FollowButtonComponent } from './buttons';
 import { ListErrorsComponent } from './list-errors.component';
 import { ShowAuthedDirective } from './show-authed.directive';
@@ -19,6 +20,7 @@ import { ShowAuthedDirective } from './show-authed.directive';
   ],
   declarations: [
     ArticleListComponent,
+    GuildsListComponent,
     ArticleMetaComponent,
     ArticlePreviewComponent,
     FavoriteButtonComponent,
@@ -28,6 +30,7 @@ import { ShowAuthedDirective } from './show-authed.directive';
   ],
   exports: [
     ArticleListComponent,
+    GuildsListComponent,
     ArticleMetaComponent,
     ArticlePreviewComponent,
     CommonModule,

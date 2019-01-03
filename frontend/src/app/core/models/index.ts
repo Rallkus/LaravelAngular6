@@ -9,4 +9,5 @@ export * from './contact.model';
 export * from './players.model';
 export * from './guilds.model';
 export * from './playerDetails.model';
+export * from './guilds-list-config.model';
 

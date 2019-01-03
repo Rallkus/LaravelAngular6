@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 use App\RealWorld\Transformers\GuildsTransformer;
 use App\RealWorld\Paginate\Paginate;
-
+use App\RealWorld\Filters\GuildsFilter;
 use App\Guilds;
 use App\Players;
 use Illuminate\Http\Request;
@@ -19,11 +19,17 @@ class GuildsController extends ApiController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(GuildsFilter $filter)
+    {
+        $guilds = new Paginate(Guilds::loadRelations());
+
+        return $this->respondWithPagination($guilds);
+    }
+   /* public function index()
     {
         $guilds = Guilds::with('players')->get();
         return $this->respondWithTransformer($guilds);
-    }
+    }*/
     /**
      * Display a listing of the resource.
      *

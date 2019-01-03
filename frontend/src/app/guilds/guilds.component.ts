@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Errors, GuildsService, Guilds} from '../core';
+import { Errors, GuildsService, Guilds, GuildsListConfig} from '../core';
 
 @Component({
   selector: 'app-auth-page',
@@ -12,6 +12,10 @@ export class GuildsComponent implements OnInit{
   title: String = 'Guilds';
   errors: Errors = {errors: {}};
   isSubmitting = false;
+  listConfig: GuildsListConfig = {
+    type: 'all',
+    filters: {}
+  };
 
   constructor(
     private route: ActivatedRoute,
@@ -20,11 +24,6 @@ export class GuildsComponent implements OnInit{
   ) {}
   ngOnInit() {
 
-    this.guildsService.getAll()
-    .subscribe(guilds => {
-      this.guilds=guilds;
-      console.log(this.guilds);
-    });
     
   }
 }

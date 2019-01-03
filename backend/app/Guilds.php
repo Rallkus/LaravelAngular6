@@ -21,4 +21,8 @@ class Guilds extends Model
     {
         return 'name';
     }
+    public function scopeLoadRelations($query)
+    {
+        return $query->orderBy('id', 'ASC');
+    }
 }

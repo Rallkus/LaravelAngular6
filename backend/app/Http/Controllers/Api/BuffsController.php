@@ -18,4 +18,5 @@ class BuffsController extends ApiController
         $buffs = Buffs::all();
         return $this->respondWithTransformer($buffs);
     }
+    
 }
