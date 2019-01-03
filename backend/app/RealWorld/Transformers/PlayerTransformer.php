@@ -15,7 +15,7 @@ class PlayerTransformer extends Transformer
             'gold' => $data['gold'],
             'reputation' => $data['reputation'],
             'experience' => $data['experience'],
-            'guild' => $data['guild'],
+            'guild' => $data['name'],
 
         ];
     }

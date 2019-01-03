@@ -7,6 +7,7 @@ import { HomeModule } from './home/home.module';
 import { BuffsModule } from './buffs/buffs.module';
 import { GuildsModule } from './guilds/guilds.module';
 import { ContactModule } from './contact/contact.module';
+import { LogoutModule } from './logout/logout.module';
 import {
   FooterComponent,
   HeaderComponent,
@@ -30,6 +31,7 @@ import { PlayerDetailsModule } from './playerDetails/playerDetails.module';
     AuthModule,
     PlayersModule,
     PlayerDetailsModule,
+    LogoutModule,
     AppRoutingModule
   ],
   providers: [],

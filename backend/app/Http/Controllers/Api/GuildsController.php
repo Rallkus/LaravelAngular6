@@ -32,12 +32,8 @@ class GuildsController extends ApiController
     public function players($guild)
     {
         
-        $b = Guilds::where('slug', $guild)->first();
-        //print_r($b);
-        $a= Guilds::with('players')->get();
-        //$players=$guild->select('name')->get();
-        //print_r($guild);
-        return $this->respondWithTransformer($b);
+        $guild = Guilds::where('slug', $guild)->first();
+        return $this->respondWithTransformer($guild);
     }
 
     /**

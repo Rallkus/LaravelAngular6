@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path: 'player',
     loadChildren: './playerDetails/playerDetails.module#PlayerDetailsModule'
+  },
+  {
+    path: 'logout',
+    loadChildren: './logout/logout.module#LogoutModule'
   }
 ];
 

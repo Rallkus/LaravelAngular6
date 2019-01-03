@@ -32,6 +32,7 @@ export class SettingsComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("hola");
     // Make a fresh copy of the current user's object to place in editable form fields
     Object.assign(this.user, this.userService.getCurrentUser());
     // Fill the form

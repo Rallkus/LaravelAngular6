@@ -24,10 +24,8 @@ class PlayerController extends ApiController
 
     public function getPlayerDetails($player)
     {
-        $details = Players::where('slug', $player)->first();
-        $guild = Guilds::where('id', $details['guilds_id'])->first();
-        $details['guild'] = $guild['name'];
-        return $this->respondWithTransformer($details);
+        $player = Guilds::join('players', 'guilds.id', '=', 'players.guilds_id')->where('players.slug', $player)->first();
+        return $this->respondWithTransformer($player);
     }
 
 }

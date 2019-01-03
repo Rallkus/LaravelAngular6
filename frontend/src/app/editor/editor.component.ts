@@ -36,6 +36,7 @@ export class EditorComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("a");
     // If there's an article prefetched, load it
     this.route.data.subscribe((data: { article: Article }) => {
       if (data.article) {
