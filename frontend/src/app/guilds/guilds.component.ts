@@ -26,4 +26,8 @@ export class GuildsComponent implements OnInit{
 
     
   }
+  setListTo(type: string = '', filters: Object = {}) {
+    // Otherwise, set the list object
+    this.listConfig = {type: type, filters: filters};
+  }
 }

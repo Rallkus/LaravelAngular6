@@ -1,1 +1,33 @@
-<app-guilds-list [limit]="10" [config]="listConfig"></app-guilds-list>
+<div class="tag-list">
+    <a
+       (click)="setListTo('all', {members: 50})"
+       class="tag-default tag-pill">
+       50
+    </a>
+    <a
+       (click)="setListTo('all', {members: 60})"
+       class="tag-default tag-pill">
+       60
+    </a>
+    <a
+       (click)="setListTo('all', {members: 70})"
+       class="tag-default tag-pill">
+       70
+    </a>
+    <a
+       (click)="setListTo('all', {members: 80})"
+       class="tag-default tag-pill">
+       80
+    </a>
+    <a
+       (click)="setListTo('all', {members: 90})"
+       class="tag-default tag-pill">
+       90
+    </a>
+    <a
+       (click)="setListTo('all', {members: 100})"
+       class="tag-default tag-pill">
+       100
+    </a>
+  </div>
+<app-guilds-list [limit]="50" [config]="listConfig"></app-guilds-list>

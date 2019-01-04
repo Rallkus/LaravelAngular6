@@ -89,7 +89,7 @@ $factory->define(App\Guilds::class, function (\Faker\Generator $faker) {
     return [
         'name' => $faker->unique()->userName,
         'image' => 'https://cdn.worldvectorlogo.com/logos/laravel.svg',
-        'max_members' => 50,
+        'max_members' => random_int(50,100),
     ];
 });
 

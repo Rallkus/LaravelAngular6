@@ -21,7 +21,7 @@ class GuildsController extends ApiController
      */
     public function index(GuildsFilter $filter)
     {
-        $guilds = new Paginate(Guilds::loadRelations());
+        $guilds = new Paginate(Guilds::loadRelations()->filter($filter));
 
         return $this->respondWithPagination($guilds);
     }

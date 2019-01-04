@@ -3,11 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\RealWorld\Filters\Filterable;
 use App\RealWorld\Slug\HasSlug;
 
 class Guilds extends Model
 {
-    use HasSlug;
+    use HasSlug, Filterable;
     /**
      * Get the guild of a hero.
      *
