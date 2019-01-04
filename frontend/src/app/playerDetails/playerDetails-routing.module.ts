@@ -5,7 +5,7 @@ import { PlayerDetailsResolver } from './playerDetails-resolver.service';
 
 const routes: Routes = [
   {
-    path: ':slug',
+    path: 'player/:slug',
     component: PlayerDetailsComponent,
     resolve: {
       player: PlayerDetailsResolver
